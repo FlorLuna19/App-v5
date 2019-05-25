@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    /*background-color: rgb(233, 233, 233);*/
+    background-image: url("../images/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    flex-flow: column;
+}
+
+#stylo-registro-body{
+    background-color: rgb(110, 110, 110);
+}
+
+/*Estilo del login*/
+.contenedor-form{
+    background-color: rgb(10, 27, 82);
+    width: 320px;
+    height: 430px;
+    padding-top: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -20px;
+}
+
+.logo{
+    margin: 10px 20px 0px 20px;
+    height: 58px;
+}
+
+.contenedor-form h1{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 22px;
+}
+
+.contenedor-form h4{
+    margin-top: 5px;
+}
+
+.contenedor-form label{
+    font-weight: normal;
+    display: block;
+    font-size: 16px;
+}
+
+.contenedor-form input{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contenedor-form input[type="text"],
+.contenedor-form input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.contenedor-form input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(255, 154, 2);
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor-form input[type="submit"]:hover{
+    font-weight: bold;
+    border: solid 2px;
+    background: rgb(219, 68, 42);
+}
+
+#button-login{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(255, 154, 2);
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#button-login:hover{
+    font-weight: bold;
+    border: solid 2px;
+    background: rgb(219, 68, 42);
+}
+
+.contenedor-form a{
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 10px;
+    margin-left: 24px;
+    color: rgb(184, 184, 184);
+}
+.contenedor-form a:hover {
+    color: rgb(255, 255, 255);
+}
+
+/*Estilo del registro*/
+.contenedor-form2{
+    background-color: rgb(10, 27, 82);
+    width: 420px;
+    height: 510px;
+    padding-top: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -20px;
+}
+
+.logo2{
+    margin: 10px 50px 0px 50px;
+    height: 63px;
+}
+
+.contenedor-form2 h1{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 22px;
+}
+
+.contenedor-form2 h4{
+    margin-top: 5px;
+}
+
+.contenedor-form2 label{
+    font-weight: normal;
+    display: block;
+    font-size: 16px;
+}
+
+.contenedor-form2 input{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contenedor-form2 input[type="text"],
+.contenedor-form2 input[type="email"],
+.contenedor-form2 input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.contenedor-form2 input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(255, 154, 2);
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor-form2 input[type="submit"]:hover{
+    font-weight: bold;
+    border: solid 2px;
+    background: rgb(219, 68, 42);
+}
+
+#button-login{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(255, 154, 2);
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#button-login:hover{
+    font-weight: bold;
+    border: solid 2px;
+    background: rgb(219, 68, 42);
+}
+
+.contenedor-form2 a{
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    line-height: 10px;
+    color: rgb(184, 184, 184);
+}
+.contenedor-form2 a:hover {
+    color: rgb(255, 255, 255);
+}
+
+/*Estilo del home*/
+header{
+    background: rgb(255, 154, 2);
+    background-color: rgb(10, 27, 82);
+    height: 140px;
+    width: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    color: white;
+    justify-content: space-between;
+
+}
+
+.contenedor-logo{
+    display: flex;
+    flex: 1 1 auto;
+    width: 30%;
+    margin-top: 20px;
+    flex-flow: row;
+    justify-content: left;
+}
+
+header h4{
+    margin-top: 20px;
+}
+
+nav{
+    background-color: rgb(10, 27, 82);
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    width: 55%;
+    margin-top: 32px;
+    margin-right: 20px;
+    justify-items: right;
+}
+
+.menu-home{
+    display: inline-flex;
+    flex: 1 1 auto;
+    flex-flow: row;
+    height: 30px;
+    justify-content: right;
+}
+    .menu-home li{
+    flex-grow: 1 ;
+    list-style: none;
+    }
+    .menu-home li a{
+        background-color: rgb(10, 27, 82);
+        text-decoration: none;
+        color: white;
+        font-style: normal;
+        font-size: 96%;
+        text-align: center;
+        padding-top: 10px; 
+        padding-bottom: 10px;
+        display: block;
+        -webkit-transition: padding-top 0.6s;
+           }
+    .menu-home li a:hover{
+    background: rgb(255, 154, 2);
+    border-radius: 10px 10px 10px 10px;
+    padding-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    }
+
+.botones-home{
+    display: flex;
+    height: 30px;
+    margin-bottom: 20px;
+    align-content: space-around;
+    margin-left: 68%;
+}
+
+.boton-usuario{
+    background-color: rgb(219, 68, 42);
+    height: 30px;
+    width: auto;
+    padding: 5px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-flow: row;
+    align-content: space-around;
+    font-weight: bold;
+    border: solid 1px white;
+    border-radius: 10px;
+    color: white;
+}
+
+.boton-usuario a{
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+}
+
+.contenedor-general{
+    background-color: rgb(59, 76, 131);
+    height: 670px;
+    height: auto;
+    padding: 20px;
+    padding-top: 20px;
+    color: white;
+}
+
+.slider{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite;
+    animation-direction: alternate;
+}
+.slider li {
+    list-style: none;
+    width: 100%;
+}
+
+.slider img{
+    width: 25%;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+.contenedor-home{
+    display: flex;
+    flex-flow: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto;
+    align-content: space-between;
+}
+
+.caja-texto{
+    width: 30%;
+    margin-right: 20px;
+}
+
+.caja-reserva{
+    background-color: rgb(219, 68, 42);
+    border-radius: 15px;
+    border: solid 2px;
+    width: 28%;
+    height: 80px;
+    padding: 15px;
+}
+.caja-reserva a {
+    text-decoration: none;
+    color: rgb(10, 27, 82);
+    font-weight: bold;
+}
+
+.footer{
+    background-color: rgb(131, 131, 133);
+    height: 50px;
+    color: #ffffff;
+    padding: 20px;
+    padding-bottom: 30px;
+    align-content: space-between;
+    display: flex;
+    flex-flow: row;
+}
+
+.info{
+    margin-right: 50%;
+}
+
+/*ESTILO USUARIO*/
+.contenedor-usuario{
+    background-color: rgb(219, 68, 42);
+    width: 38%;
+    height: 350px;
+    border-radius: 20px;
+    padding: 15px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+#img-perfil{
+    width: 50%;
+}
+
+/*ESTILO RESERVA*/
+.contenedor-reserva{
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(100, 116, 170);
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+.boton-cons{
+    background-color: rgb(219, 68, 42);
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    height: 35px;
+    width: auto;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    border: solid 1px white;
+    border-radius: 10px;
+    color: white;
+}
+
+#divContenedorLugares{
+    background-color: rgb(202, 77, 55);
+    width: auto;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+#divContenedorVuelta{
+    background-color: rgb(194, 156, 32);
+    width: auto;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.estilo-boton{
+    background-color: rgb(243, 117, 95);
+    padding: 5px;
+    color: black;
+    width: 68px;
+    margin: 2px;
+}
+
+.estilo-botonVuelta{
+    background-color: rgb(243, 208, 95);
+    padding: 5px;
+    color: black;
+    width: 68px;
+    margin: 2px;
+}
+
+/*Modal*/
+.caja-modal-Ok{
+    background-color: rgba(50, 233, 33, 0.877);
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 3px white;
+    text-align: center;
+    position: absolute;
+    margin-left: 28%;
+    margin-top: 5%;
+    display: none;
+}
+
+.caja-modal-No{
+    background-color: rgba(211, 17, 17, 0.877);
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 3px white;
+    text-align: center;
+    position: absolute;
+    margin-left: 28%;
+    margin-top: 5%;
+    display: none;
+}
+
+/*ESTILO EMPRESA*/
+.contenedor-fotos{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    align-content: space-between;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0px;
+}
+
+.caja-foto{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    margin-top: 20px;
+}
+
+/*ESTILO RECORRIDO*/
+.contenedor-mapa{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.lista{
+    background-color: rgb(219, 68, 42);
+    width: 26%;
+    border-radius: 20px;
+    padding: 15px;
+    margin-right: 20px;
+}
+
+.caja-mapa{
+    padding-top: 10px;
+    width: 60%;
+}

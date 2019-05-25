@@ -1,0 +1,91 @@
+[
+    {
+    "dia":"Lunes",
+    "disponibilidad":true,
+    "horario" : "16:00"
+    },
+
+    {
+    "dia":"Lunes",
+    "disponibilidad":false,
+    "horario" : "17:00"
+    },
+
+    {
+    "dia":"Lunes",
+    "disponibilidad":true,
+    "horario" : "18:00"
+    },
+
+    {
+    "dia":"Martes",
+    "disponibilidad":true,
+    "horario": "16:00"
+    },
+
+    {
+    "dia":"Martes",
+    "disponibilidad":true,
+    "horario": "17:00"
+    },
+
+    {
+    "dia":"Martes",
+    "disponibilidad":true,
+    "horario": "18:00"
+        },
+
+    {
+    "dia":"Miercoles",
+    "disponibilidad":false,
+    "horario": "16:00"
+    },
+
+    {
+    "dia":"Miercoles",
+    "disponibilidad":true,
+    "horario": "17:00"
+    },
+
+    {
+    "dia":"Miercoles",
+    "disponibilidad":true,
+    "horario": "18:00"
+    },
+
+    {
+    "dia":"Jueves",
+    "disponibilidad":true,
+    "horario": "16:00"
+    },
+
+    {
+    "dia":"Jueves",
+    "disponibilidad":true,
+    "horario": "17:00"
+    },
+
+    {
+    "dia":"Jueves",
+    "disponibilidad":true,
+    "horario": "18:00"
+    },
+
+    {
+    "dia":"Viernes",
+    "disponibilidad":false,
+    "horario": "16:00"
+    },
+
+    {
+    "dia":"Viernes",
+    "disponibilidad":false,
+    "horario": "17:00"
+    },
+
+    {
+    "dia":"Viernes",
+    "disponibilidad":true,
+    "horario": "18:00"
+    }
+]

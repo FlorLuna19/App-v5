@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script type="text/javascript"></script>
+        
+    <title>Login</title>
+</head>
+<body>
+    <div class="contenedor-form">
+        <img class="logo" src="../images/logo-final.png" alt="logo">
+
+        <h1>¡Bienvenido!</h1>
+        <h4>Acceda a su cuenta para usar el servicio</h4>
+
+        <form>
+            <label for="user-id">Username</label>
+            <input id= "user-id" type="text" placeholder="Ingrese nombre de usuario">
+
+            <label for="password">Password</label>
+            <input id= "password" type="password" placeholder="Ingrese contraseña">
+
+            <input type="submit" value="Login" onclick="login()">
+
+            <!--<a href="">Lost your password?</a>-->
+            <a href="registro.html">¿No tienes una cuenta?</a>
+            <a href="home">Ir al home</a>
+
+        </form>
+
+        <div class="error-message" id="error-message"></div>
+
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
