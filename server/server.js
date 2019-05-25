@@ -9,7 +9,6 @@ const expressSession = require('express-session');
 
 //Libreria de Mongodb
 const mongodb = require('mongodb');
-
 //MongoClient //Usado en 'dbLogin'
 const MongoClient = mongodb.MongoClient;
 const mongoURL = 'mongodb://localhost:27017';
@@ -20,11 +19,9 @@ const client = new MongoClient(mongoURL);
 client.connect(function(err, client) {
   // Acá va todo el código para interactuar con MongoDB
   console.log("Conectados a MongoDB");
-
   // Luego de usar la conexión podemos cerrarla
   client.close();
 });
-
 
 
 
@@ -82,12 +79,6 @@ app.get("/usuario", function(req, res) {
   res.render("usuario");
 });
 
-//Ingreso a reserva
-app.get("/reserva", function(req, res) {
-  console.log("Entre a reserva con handlebars")
-  res.render("reserva");
-});
-
 //Ingreso a recorrido
 app.get("/recorrido", function(req, res) {
   console.log("Entre a recorrido con handlebars")
@@ -113,7 +104,8 @@ app.get("/reserva", function(req, res) {
     console.log("estoy aca");
 
     // Insertamos la database que usaremos
-    const db = client.db("expressdb");
+    //const db = client.db("expressdb");
+    const db = client.db(dbName);
     console.log(db);
 
     // Especificamos que coleccion usaremos
@@ -249,55 +241,11 @@ app.get('/logout', (req, res) => {
 })
 
 
-//POST / home
-app.get('/home', function (req, res) {
-    console.log("Entre al home");
-    res.sendFile(path.join(__dirname, '../client/html/home.html'));
-})
-
-
-app.get('/usuario', function (req, res) {
-    console.log("Entre a usuario");
-    res.sendFile(path.join(__dirname, '../client/html/usuario.html'));
-})
-
-app.get('/reserva', function (req, res) {
-  console.log("Entre a reserva");
-  res.sendFile(path.join(__dirname, '../client/html/reserva.html'));
-})
-
-app.get('/recorrido', function (req, res) {
-  console.log("Entre a recorrido");
-  res.sendFile(path.join(__dirname, '../client/html/recorrido.html'));
-})
-
-app.get('/empresa', function (req, res) {
-  console.log("Entre a empresa");
-  res.sendFile(path.join(__dirname, '../client/html/empresa.html'));
-})
-
-
 //Dirijo la ruta para que ingrese a reserva con handlebars
 app.get('/reservahandlebars', function (req, res) {
   console.log("Entre a reserva con handlebars");
   res.sendFile(path.join(__dirname, '../client/html/reservaHANDLE.html'));
 })
-
-
-
-
-
-app.get('/datos/datosUsuarios', function (req, res) {
-
-  fs.readFile(path.join(__dirname, 'datosUsuarios.json'), function(err, data) {
-    if (err == undefined) {
-      let listaUsuarios = JSON.parse(data);
-
-      res.send(listaUsuarios);
-    }
-  })  
-})
-
 
 
 //Uso archivo reserva
@@ -323,41 +271,4 @@ app.get('/datos/reservaVuelta', function (req, res) {
   console.log("Lei disponibildad2");
 
 })
-
-
-///**agregados handlebars 
-//GET
-//Ingreso a la carpeta raíz
-// RUTA REGISTRAR HANDLEBARS
-app.get("/home", function(req, res) {
-
-  res.render("home");
-
-});
-
-
-
-
-
-
-
-
-//NO LO VAMOS A USAR POR EL MOMENTO
-app.get('/datos/reservarlugar', function (req, res) {
-
-  // Reserva guardada
-  fs.readFile(path.join(__dirname, 'diasDisponibles.json'), (err, data) => {
-    if (err == undefined) {
-      let jsonDatosDiasReserva = JSON.parse(data);
-      res.send(jsonDatosDiasReserva)
-    }
-  })
-
-})
-
-
-
-//Server iniciado en puerto 4545
-app.listen(4545, function(){
-    console.log("Escuchando puerto 4545");
-})*/
+*/
