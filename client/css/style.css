@@ -443,7 +443,35 @@ nav{
     height: auto;
     margin-top: 20px;
     padding: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+}
+
+/*Estilo tabla reserva*/
+table {
+    border: 3px solid rgb(43, 73, 129);
+    background-color: #3c4888;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px;
+    padding-bottom: 15px;
+    color:white;
+    flex: display;
+    flex-flow: grid;
+}
+
+table td {
+    width: 20%;
+    border: 1px solid lightgray;
+    padding: 5px;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+table tr {
+    display: flex;
 }
 
 .boton-cons{
@@ -565,3 +593,4 @@ nav{
     padding-top: 10px;
     width: 60%;
 }
+

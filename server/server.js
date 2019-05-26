@@ -15,7 +15,7 @@ const mongoURL = 'mongodb://localhost:27017';
 const dbName = "expressdb";
 const client = new MongoClient(mongoURL);
 
-// Utilizamos el método connect para conectarnos a MongoDB
+//Utilizamos el método connect para conectarnos a MongoDB
 client.connect(function(err, client) {
   // Acá va todo el código para interactuar con MongoDB
   console.log("Conectados a MongoDB");
@@ -60,6 +60,7 @@ app.engine("handlebars", exphbs({
     layoutsDir: path.join(__dirname, "views/layouts")
   })
 );
+//Seteamos la carpeta para las vistas
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
@@ -67,7 +68,12 @@ app.set("views", path.join(__dirname, "views"));
 
 //GET
 //Ingreso a la carpeta raíz
-// RUTA REGISTRAR HANDLEBARS
+app.get('/', function (req, res) {
+  console.log("Entre al login");
+  res.sendFile(path.join(__dirname, '../client/html/index.html'));
+})
+
+//Ingreso a home con Handlebars
 app.get("/home", function(req, res) {
   console.log("Entre al home con handlebars")
   res.render("home");
@@ -97,7 +103,7 @@ app.get("/calendario", function(req, res) {
   res.render("calendario");
 });
 
-//Probando incorporar mongo en reservas--
+//Ingreso a reserva con Mongodb
 app.get("/reserva", function(req, res) {
   // Conectamos a MongoDB                      
   client.connect(function(error, client) {
@@ -108,7 +114,7 @@ app.get("/reserva", function(req, res) {
     console.log(db);
 
     // Especificamos que coleccion usaremos
-    let coleccion = db.collection("viajesIda");
+    let coleccion = db.collection("horariosIda");
     console.log(coleccion);
 
     coleccion.find().toArray(function(err, data) {
@@ -122,7 +128,7 @@ app.get("/reserva", function(req, res) {
 });
 
 
-//Probando incorporar mongo en usuarios--
+//Ingreso a usuario con Mongodb
 app.get("/usuario", function(req, res) {
   // Conectamos a MongoDB                      
   client.connect(function(error, client) {
@@ -139,7 +145,7 @@ app.get("/usuario", function(req, res) {
     coleccion.find().toArray(function(err, data) {
       console.log(data);
       res.render("usuario", {
-        data: data
+      data: data
       });
 
     });
@@ -158,59 +164,12 @@ app.listen(4545, function(){
 
 
 /*
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const path = require("path");
-const fs = require('fs');
-const expressSession = require('express-session');
-
-
-//Libreria de Mongodb
-const mongodb = require('mongodb');
-
-//MongoClient //Usado en 'dbLogin'
-const MongoClient = mongodb.MongoClient;
-const mongoURL = 'mongodb://localhost: 27017';
-const dbName = "expressdb";
-
-//Uso de Handlebars
-const exphbs= require("express-handlebars");
-
-//Js
-const login = require('./loginValidar');
-//const reserva = require('./reserva');//agregue
-
 //Manejo de sesión en Express
 app.use(expressSession({
   secret: 'clave incorrecta',
   resave: false,
   saveUninitialized: false
 }))
-
-//Middleware de body parser para json
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true}));
-
-//Ruta para uso de elementos estáticos
-app.use(express.static(path.join(__dirname, '../client')));
-app.use(express.static(path.join(__dirname, '../client/html')));
-app.use(express.static(path.join(__dirname, '../client/js')));
-app.use(express.static(path.join(__dirname, '../client/css')));
-
-
-//Configuración vista con Handlebars
-// Acá seteamos como motor de renderizado de vistas "handlebars"
-app.engine("handlebars", exphbs({
-  defaultLayout: "main-layout",
-  layoutsDir: path.join(__dirname, "views/layouts")
-})
-);
-
-//Seteamos la carpeta para las vistas
-app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, "views"));
-
 
 
 //GET
@@ -264,35 +223,4 @@ app.get('/logout', (req, res) => {
   res.redirect("/");
 })
 
-
-//Dirijo la ruta para que ingrese a reserva con handlebars
-app.get('/reservahandlebars', function (req, res) {
-  console.log("Entre a reserva con handlebars");
-  res.sendFile(path.join(__dirname, '../client/html/reservaHANDLE.html'));
-})
-
-
-//Uso archivo reserva
-app.get('/datos/reserva', function (req, res) {
-  fs.readFile(path.join(__dirname, 'disponibilidad.json'), (err, data) => {
-    if (err == undefined) {
-      let jsonDatosDiasReserva = JSON.parse(data);
-      res.send(jsonDatosDiasReserva)
-    }
-    })
-  console.log("Lei disponibildad.json");
-
-})
-
-//Uso archivo reserva para vuelta
-app.get('/datos/reservaVuelta', function (req, res) {
-  fs.readFile(path.join(__dirname, 'disponibilidad2.json'), (err, data) => {
-    if (err == undefined) {
-      let jsonDatosDiasReservaVuelta = JSON.parse(data);
-      res.send(jsonDatosDiasReservaVuelta)
-    }
-    })
-  console.log("Lei disponibildad2");
-
-})
 */

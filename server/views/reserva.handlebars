@@ -2,27 +2,37 @@
 <p>Seguí los pasos a continuación para reservar tu lugar para llegar a destino</p>
 
 <div class="contenedor-reserva">
-    <button class="boton-cons" id="boton-consulta">Consultar</button>
-    <div id="divContenedorLugares">
+   <!-- <button class="boton-cons" id="boton-consulta">Consultar</button>
+   <div id="divContenedorLugares">-->
 
     <table>
-	    <thead>
+	    <thead><h3>Tabla de horarios y disponibilidad</h3>
+		<h4>Viajes matutinos</h4>
 		<tr>
-			<td>7:00</td><td>7:30</td><td>8:00</td><!--... etc ...-->
+		<td><strong>Horario</strong></td>
+		<td><strong>Lunes</strong></td>
+		<td><strong>Martes</strong></td>
+		<td><strong>Miércoles</strong></td>
+		<td><strong>Jueves</strong></td>
+		<td><strong>Viernes</strong></td>
 		</tr>
 	    </thead>
-	    <tbody>
-		{{#each horariosIda}}
+
+		<tbody>{{#each data}}
 		<tr>
-			{{#each this.lugares}}
-			<td>{{this}}</td>
-			{{/each}}
+			<td>{{this.hora1}}</td>
+			<td>{{this.lugarLunes}}</td>
+			<td>{{this.lugares}}</td>
+			<td>{{this.lugares}}</td>
+			<td>{{this.lugares}}</td>
+			<td>{{this.lugares}}</td>
 		</tr>
+
+		
+
 		{{/each}}
-	    </tbody>
-    </table>
+		</tbody>
 
-
-    </div>
+	</table>
 
 </div>
