@@ -74,10 +74,10 @@ app.get("/home", function(req, res) {
 });
 
 //Ingreso a usuario
-app.get("/usuario", function(req, res) {
-  console.log("Entre a usuario con handlebars")
-  res.render("usuario");
-});
+//app.get("/usuario", function(req, res) {
+  //console.log("Entre a usuario con handlebars")
+  //res.render("usuario");
+//});
 
 //Ingreso a recorrido
 app.get("/recorrido", function(req, res) {
@@ -101,11 +101,35 @@ app.get("/calendario", function(req, res) {
 app.get("/reserva", function(req, res) {
   // Conectamos a MongoDB                      
   client.connect(function(error, client) {
+    console.log("Entre a reserva con handlebars y mongodb");
+
+    // Insertamos la base de datos que usaremos
+    const db = client.db(dbName);
+    console.log(db);
+
+    // Especificamos que coleccion usaremos
+    let coleccion = db.collection("viajesIda");
+    console.log(coleccion);
+
+    coleccion.find().toArray(function(err, data) {
+      console.log(data);
+      res.render("reserva", {
+        data: data
+      });
+
+    });
+  });
+});
+
+
+//Probando incorporar mongo en usuarios--
+app.get("/usuario", function(req, res) {
+  // Conectamos a MongoDB                      
+  client.connect(function(error, client) {
     console.log("estoy aca");
 
-    // Insertamos la database que usaremos
-    //const db = client.db("expressdb");
-    const db = client.db(dbName);
+    // Insertamos la base de datos que usaremos
+    const db = client.db("expressdb");
     console.log(db);
 
     // Especificamos que coleccion usaremos
@@ -114,7 +138,7 @@ app.get("/reserva", function(req, res) {
 
     coleccion.find().toArray(function(err, data) {
       console.log(data);
-      res.render("reserva", {
+      res.render("usuario", {
         data: data
       });
 

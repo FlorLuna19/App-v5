@@ -1,4 +1,28 @@
 <h2>Reservas de lugares</h2>
 <p>Seguí los pasos a continuación para reservar tu lugar para llegar a destino</p>
 
-<div id="divContenedorLugares"></div>
+<div class="contenedor-reserva">
+    <button class="boton-cons" id="boton-consulta">Consultar</button>
+    <div id="divContenedorLugares">
+
+    <table>
+	    <thead>
+		<tr>
+			<td>7:00</td><td>7:30</td><td>8:00</td><!--... etc ...-->
+		</tr>
+	    </thead>
+	    <tbody>
+		{{#each horariosIda}}
+		<tr>
+			{{#each this.lugares}}
+			<td>{{this}}</td>
+			{{/each}}
+		</tr>
+		{{/each}}
+	    </tbody>
+    </table>
+
+
+    </div>
+
+</div>
