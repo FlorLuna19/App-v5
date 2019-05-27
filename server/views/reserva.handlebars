@@ -5,6 +5,66 @@
    <!-- <button class="boton-cons" id="boton-consulta">Consultar</button>
    <div id="divContenedorLugares">-->
 
+	<table>
+	<thead>
+		<tr>
+			<td>Día</td><td>7:00</td><td>7:30</td><td>8:00</td><!--etc ...-->
+		</tr>
+	</thead>
+	<tbody>
+		{{#each datos}}
+			<tr>
+				<td>{{this.dia}}</td>
+				{{#each this.disponibilidad}}
+					<td>{{this}}</td>
+				{{/each}}
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+	<table>
+	<thead><h3>Tabla de horarios y disponibilidad</h3>
+		<h4>Viajes matutinos</h4>
+
+		<tr>
+			<td><strong>Horario</strong></td>
+			<td><strong>Lunes</strong></td>
+			<td><strong>Martes</strong></td>
+			<td><strong>Miércoles</strong></td>
+			<td><strong>Jueves</strong></td>
+			<td><strong>Viernes</strong></td>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each data}}
+			<tr>
+				{{#each this.disponibilidad}}		<!--Array de disponibilidad ("acá this" es datos)-->
+					{{#if @first}}					<!--Entra a este if solo si es el primer elemento del array (pongo la hora solo una vez)-->
+						<td>{{this.hora}}</td>	<!--Array de lugares dentro de disponibilidad (acá "this" es datos.disponibilidad)-->
+					{{/if}}
+					<td>{{this.lugares}}</td>		<!--Array de lugares dentro de disponibilidad (acá "this" es datos.disponibilidad)-->
+					<td>{{this.lugares}}</td>
+				{{/each}}
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<!--
+
     <table>
 	    <thead><h3>Tabla de horarios y disponibilidad</h3>
 		<h4>Viajes matutinos</h4>
@@ -20,19 +80,26 @@
 
 		<tbody>{{#each data}}
 		<tr>
-			<td>{{this.hora1}}</td>
-			<td>{{this.lugarLunes}}</td>
+			<td>06:30</td>
+			<td>{{this.hora}}</td>
 			<td>{{this.lugares}}</td>
 			<td>{{this.lugares}}</td>
 			<td>{{this.lugares}}</td>
 			<td>{{this.lugares}}</td>
 		</tr>
 
-		
+		<tr>
+			<td>07:00</td>
+			<td>{{this.lugar}}</td>
+			<td>{{this.lugares}}</td>
+			<td>{{this.lugares}}</td>
+			<td>{{this.lugares}}</td>
+			<td>{{this.lugares}}</td>
+		</tr>
 
 		{{/each}}
 		</tbody>
 
-	</table>
+	</table>-->
 
 </div>
