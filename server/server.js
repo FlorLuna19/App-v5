@@ -113,17 +113,29 @@ app.get("/reserva", function(req, res) {
     const db = client.db(dbName);
     console.log(db);
 
-    // Especificamos que coleccion usaremos
-    let coleccion = db.collection("horariosIda");
-    console.log(coleccion);
+    // Especificamos que coleccion usaremos para tabla Ida
+    let coleccionIda = db.collection("horariosIda");
 
-    coleccion.find().toArray(function(err, data) {
-      console.log(data);
+    // Especificamos que coleccion usaremos para tabla Vuelta
+    let coleccionVuelta = db.collection("horariosVuelta");
+
+    //Busca los datos de la coleccion y lo transforma en un array
+    coleccionVuelta.find().toArray(function(err, datosVuelta) {
+      console.log(datosVuelta);
+
+
+    coleccionIda.find().toArray(function(err, datosIda) {
+      //console.log(data);
       res.render("reserva", {
-        data: data
+        //Asigno una etiqueta 'datosLugares' para usar los datos del array que traigo de la colección
+        datosIda: datosIda,
+        datosVuelta: datosVuelta
       });
 
     });
+
+  });
+
   });
 });
 
@@ -132,11 +144,9 @@ app.get("/reserva", function(req, res) {
 app.get("/usuario", function(req, res) {
   // Conectamos a MongoDB                      
   client.connect(function(error, client) {
-    console.log("estoy aca");
 
     // Insertamos la base de datos que usaremos
     const db = client.db("expressdb");
-    console.log(db);
 
     // Especificamos que coleccion usaremos
     let coleccion = db.collection("usuarios");
@@ -151,6 +161,40 @@ app.get("/usuario", function(req, res) {
     });
   });
 });
+
+
+
+//POST / Login 
+app.post('/login/form', (req, res) => {
+
+  const nombre = req.body.user;
+  const password = req.body.password;
+
+
+client.connect(function(error, client) {
+  // Insertamos la base de datos que usaremos
+  const db = client.db("expressdb");
+
+
+  let coleccionUsuarios = db.collection("usuarios");
+
+  coleccionUsuarios.find({nombre: nombre, password: password}).toArray(function(err, datosLogin) {
+    console.log(datosLogin);
+
+    if(datosLogin.length == 1) {
+    console.log("estoy logueado")
+    res.redirect('/home');
+    }else{
+      res.redirect('/index.html')
+      console.log("no me loguee")
+    }
+    
+
+  })
+})
+
+});
+
 
 
 

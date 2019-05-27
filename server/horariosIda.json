@@ -1,0 +1,26 @@
+[
+    {
+    "dia":"Lunes",
+    "disponibilidad": [1, 2, 0, 3]
+    },
+
+    {
+    "dia":"Martes",
+    "disponibilidad": [5, 7, 1, 2]
+    },
+
+    {
+    "dia":"Miércoles",
+    "disponibilidad": [0, 3, 4, 1]
+    },
+
+    {
+    "dia":"Jueves",
+    "disponibilidad": [1, 0, 3, 4]
+    },
+
+    {
+    "dia":"Viernes",
+    "disponibilidad": [2, 1, 2, 3]
+    }
+]

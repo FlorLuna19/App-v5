@@ -16,14 +16,14 @@
         <h1>¡Bienvenido!</h1>
         <h4>Acceda a su cuenta para usar el servicio</h4>
 
-        <form>
+        <form action="/login/form" method="post">
             <label for="user-id">Username</label>
-            <input id= "user-id" type="text" placeholder="Ingrese nombre de usuario">
+            <input id="user-id"  name="user" type="text" placeholder="Ingrese nombre de usuario">
 
             <label for="password">Password</label>
-            <input id= "password" type="password" placeholder="Ingrese contraseña">
+            <input id="password" name="password" type="password" placeholder="Ingrese contraseña">
 
-            <input type="submit" value="Login" onclick="login()">
+            <input type="submit" value="Login">
 
             <!--<a href="">Lost your password?</a>-->
             <a href="registro.html">¿No tienes una cuenta?</a>
