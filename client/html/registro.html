@@ -19,20 +19,23 @@
         <h1>¡Bienvenido!</h1>
         <h4>Complete los datos requeridos:</h4>
 
-        <form>
+        <form action="/registro/form" method="POST">
             <label for="user-id">Username</label>
-            <input id= "user-id" type="text" placeholder="Ingrese nombre de usuario">
+            <input id= "user-id" name="user" type="text" placeholder="Ingrese nombre de usuario">
 
             <label for="email-id"><E-mail>E-mail</E-mail></label>
-            <input id= "email-id" type="email" placeholder="Ingrese su E-mail">
+            <input id= "email-id" name="email" type="email" placeholder="Ingrese su E-mail">
+
+            <label for="email-id"><E-mail>Residencia</E-mail></label>
+            <input id= "email-id" name="residencia" type="text" placeholder="Ingrese su lugar de residencia">
 
             <label for="password">Password</label>
-            <input id= "password" type="password" placeholder="Ingrese contraseña">
+            <input id= "password" name="password" type="password" placeholder="Ingrese contraseña">
 
-            <input type="submit" value="Registrarse" onclick="login()">
+            <input type="submit" value="Registrarse">
             
-            <a href="index.html">¿Ya tienes una cuenta? Inicia sesión</a>
-            <a href="/home">Ir al home</a>
+            <a href="/login">¿Ya tienes una cuenta? Inicia sesión</a>
+            <a href="/">Ir al home</a>
             
         </form>
 

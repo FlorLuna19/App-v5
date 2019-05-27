@@ -37,19 +37,12 @@
 			<tr>
 				<td>{{this.dia}}</td>
 				{{#each this.disponibilidad}}
-					<td onclick="doBoton()">{{this}}</td>
+					<td>{{this}}</td>
 				{{/each}}
 			</tr>
 		{{/each}}
 	</tbody>
 </table>
-
-<script>
-	function doBoton(){
-	var miDato = miCelda.firstChild.nodeValue;
-	console.log(miDato);
-}
-</script>
 
 
 
