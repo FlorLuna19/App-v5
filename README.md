@@ -2,7 +2,7 @@
 //Idea general
 Una empresa ofrece a sus empleados un servicio de transporte (combis o remises) desde un punto de encuentro hasta la ubicación del lugar de trabajo.
 
-//Problema
+# Problema
 Los empleados que trabajan en la empresa, si bien son empleados con horarios de trabajo fijos, algunos dìas trabajan desde su casa.
 Por lo que tienen que avisar al administrador cada día si van a utilizar el servicio de transporte al día siguiente o no.
 
