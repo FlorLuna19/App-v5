@@ -583,7 +583,7 @@ table tr {
     position: absolute;
     margin-left: 28%;
     margin-top: 5%;
-    display: /*none*/;
+    display: none;
 }
 
 .caja-modal-No{
@@ -597,7 +597,7 @@ table tr {
     position: absolute;
     margin-left: 28%;
     margin-top: 5%;
-    display: /*none*/;
+    display: none;
 }
 
 /*ESTILO EMPRESA*/
