@@ -449,6 +449,11 @@ nav{
     align-content: center;
 }
 
+.caja-empleados{
+    background-color: yellow;
+    width: 20%;
+}
+
 #img-perfil{
     width: 25%;
 }

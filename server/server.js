@@ -198,7 +198,7 @@ app.get("/reserva", function(req, res) {
         email: req.session.email,
         residencia: req.session.residencia
           }
-  //Esa es la vista del usuario logueado
+        //Vista del usuario logueado
         res.render("reserva", {
         data: datosUsuarioLogueado,
         datosIda: datosIda,
@@ -207,7 +207,7 @@ app.get("/reserva", function(req, res) {
         });
   
         } else {
-          //Es la vista de usuario no logueado
+          //Vista de usuario no logueado
           res.render("reserva", {
             //Asigno una etiqueta 'datosLugares' para usar los datos del array que traigo de la colección
             datosIda: datosIda,
@@ -215,16 +215,13 @@ app.get("/reserva", function(req, res) {
           });
         }
 
-
-
-      
-
     });
 
   });
 
   });
 });
+
 
 
 //Ingreso a usuario con Mongodb
@@ -261,6 +258,7 @@ client.connect(function(error, client) {
   // Insertamos la base de datos que usaremos
   const db = client.db("expressdb");
 
+  //Indicamos la colección donde se van a agregar los datos de login
   let coleccionUsuarios = db.collection("usuarios");
 
   coleccionUsuarios.find({nombre: nombre, password: password}).toArray(function(err, datosLogin) {
@@ -281,7 +279,6 @@ client.connect(function(error, client) {
       console.log("No me loguee")
     }
     
-
   })
 })
 
@@ -333,14 +330,6 @@ app.listen(4545, function(){
 
 
 /*
-//Manejo de sesión en Express
-app.use(expressSession({
-  secret: 'clave incorrecta',
-  resave: false,
-  saveUninitialized: false
-}))
-
-
 //GET
 //Ingreso a la carpeta raíz
 app.get('/', function (req, res) {
@@ -383,13 +372,4 @@ app.get('home', (req, res) => {
     res.redirect('/');
   }
 });
-
-
-//GET logout
-app.get('/logout', (req, res) => {
-  //Sale de sesión y redirijo al login
-  req.session.destroy();
-  res.redirect("/");
-})
-
 */

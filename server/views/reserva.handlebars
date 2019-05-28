@@ -2,7 +2,6 @@
 <p>Seguí los pasos a continuación para reservar tu lugar para llegar a destino</p>
 
 <div class="contenedor-reserva">
-   <!-- <button class="boton-cons" id="boton-consulta">Consultar</button>-->
 
 	<table>
 	<thead><h3>Tabla de horarios y disponibilidad</h3>
@@ -16,7 +15,7 @@
 			<tr>
 				<td>{{this.dia}}</td>
 				{{#each this.disponibilidad}}
-					<td>{{this}}<button class="boton-cons" onclick="reservarLugar()">Reservar</button></td>
+					<td>{{this}}<button class="boton-cons" onclick="reservarLugar('{{../dia}}', {{@index}})">Reservar</button></td>
 				{{/each}}
 			</tr>
 		{{/each}}
@@ -36,7 +35,7 @@
 			<tr>
 				<td>{{this.dia}}</td>
 				{{#each this.disponibilidad}}
-					<td>{{this}}<button class="boton-cons">Reservar</button></td>
+					<td>{{this}}<button class="boton-cons" onclick="reservarLugar('{{../dia}}', {{@index}})">Reservar</button></td>
 				{{/each}}
 			</tr>
 		{{/each}}
@@ -47,13 +46,13 @@
 
 <script>
 
-	
+	function reservarLugar(dia, lugares) {
+			
+	//console.log(dia, lugares)
 
-	function reservarLugar(dia, horario) {
-	var dia = {{this.dia}}
-	var horario = {{this.disponibilidad}}
-		
-		console.log(dia, horario)
+	console.log("Para el dia:", dia)
+	console.log("Hay disponibles", lugares, "lugares")
 	}
+
 
 </script>
