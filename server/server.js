@@ -77,18 +77,20 @@ app.get("/", function(req, res) {
       email: req.session.email,
       residencia: req.session.residencia
         }
-//Esa es la vista del usuario logueado
+//Esta es la vista del usuario logueado
       res.render("home", {
       data: datosUsuarioLogueado
       
       });
 
       } else {
-        //Es la vista de usuario no logueado
+        //Esta es la vista de usuario no logueado
         res.render('home')
       }
 
 });
+
+
 
 //GET
 //Ingreso a la login
@@ -100,7 +102,7 @@ app.get('/login', function (req, res) {
 
 
 //Ingreso a recorrido
-app.get("/recorrido", function(req, res) {
+app.get('/recorrido', function(req, res) {
   console.log("Entre a recorrido con handlebars")
 
   if(req.session.userId !== undefined) {
@@ -110,7 +112,7 @@ app.get("/recorrido", function(req, res) {
       residencia: req.session.residencia
         }
 //Esa es la vista del usuario logueado
-      res.render("recorrido", {
+      res.render('recorrido', {
       data: datosUsuarioLogueado
       
       });
@@ -123,7 +125,7 @@ app.get("/recorrido", function(req, res) {
 });
 
 //Ingreso a empresa
-app.get("/empresa", function(req, res) {
+app.get('/empresa', function(req, res) {
   console.log("Entre a empresa con handlebars")
 
   if(req.session.userId !== undefined) {
@@ -133,7 +135,7 @@ app.get("/empresa", function(req, res) {
       residencia: req.session.residencia
         }
 //Esa es la vista del usuario logueado
-      res.render("empresa", {
+      res.render('empresa', {
       data: datosUsuarioLogueado
       
       });
@@ -146,7 +148,7 @@ app.get("/empresa", function(req, res) {
 });
 
 //Ingreso a calendario
-app.get("/calendario", function(req, res) {
+app.get('/calendario', function(req, res) {
   console.log("Entre a calendario con handlebars")
 
   if(req.session.userId !== undefined) {
@@ -156,7 +158,7 @@ app.get("/calendario", function(req, res) {
       residencia: req.session.residencia
         }
 //Esa es la vista del usuario logueado
-      res.render("calendario", {
+      res.render('calendario', {
       data: datosUsuarioLogueado
       
       });
@@ -169,7 +171,7 @@ app.get("/calendario", function(req, res) {
 });
 
 //Ingreso a reserva con Mongodb
-app.get("/reserva", function(req, res) {
+app.get('/reserva', function(req, res) {
   // Conectamos a MongoDB                      
   client.connect(function(error, client) {
     console.log("Entre a reserva con handlebars y mongodb");
@@ -222,10 +224,50 @@ app.get("/reserva", function(req, res) {
   });
 });
 
+///****************************************************** */
+//POST, datos de reserva
+app.post('/reserva', (req, res) => {
+
+  const dia = req.body.dia;  //disponibilidad
+  const disponibilidad = req.body.disponibilidad;
+
+client.connect(function(error, client) {
+  // Indicamos la base de datos que usaremos
+  const db = client.db("expressdb");
+
+  //Indicamos la colección donde se van a modificar los datos
+  let coleccionReservaIda = db.collection("horariosIda");
+
+  coleccionReservaIda.find({dia: dia, disponibilidad: disponibilidad}).toArray(function(err, datosReserva) {
+    console.log(datosReserva);
+
+    if(datosReserva.length >= 1) {
+    console.log("Hago reserva con Mongo");
+
+    req.session.userId = datosReserva[0]._id;
+    req.session.dia = datosReserva[0].dia;
+    req.session.disponibilidad = datosReserva[0].disponibilidad;
+
+    db.client.update(
+      {$unset: {disponibilidad: 1}}
+    )
+
+    res.redirect('/reserva');
+
+    }else{
+      res.redirect('/reserva')
+      console.log("No hay lugares")
+    }
+    
+  })
+})
+
+});
+///********************************************************** */
 
 
 //Ingreso a usuario con Mongodb
-app.get("/usuario", function(req, res) {
+app.get('/usuario', function(req, res) {
   
   if(req.session.userId !== undefined) {
     const datosUsuarioLogueado = {
@@ -243,6 +285,7 @@ app.get("/usuario", function(req, res) {
       }
  
     });
+
 
 
 
@@ -330,14 +373,6 @@ app.listen(4545, function(){
 
 
 /*
-//GET
-//Ingreso a la carpeta raíz
-app.get('/', function (req, res) {
-    console.log("Entre al login");
-    res.sendFile(path.join(__dirname, '../client/html/index.html'));
-})
-
-
 //POST / Login 
 app.post('/login', (req, res) => {
   console.log(req.body);
@@ -371,5 +406,4 @@ app.get('home', (req, res) => {
     //Si el usuario no tiene una sesión activa lo redirijo a login para que inicie sesión.
     res.redirect('/');
   }
-});
-*/
+});*/

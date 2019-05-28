@@ -3,6 +3,23 @@
 
 <div class="contenedor-reserva">
 
+	<!--Ventana modal-->
+   <div class="caja-modal-Ok" id="modalOk">
+        <img src="../images/iconosA.png" alt="">
+        <h3>Su reserva fue realizada con éxito</h3>
+        <p>Lo esperamos en su parada local</p>
+        <button onclick="document.getElementById('modalOk').style.display= 'none' " class = "btn-modal">Aceptar</button>
+    </div>
+
+	<div class="caja-modal-No" id="modalNo">
+        <img src="../images/iconosB.png" alt="">
+        <h3>No hay lugares disponibles</h3>
+        <p>Elija otro horario para viajar</p>
+        <button onclick="document.getElementById('modalNo').style.display= 'none' " class = "btn-modal">Aceptar</button>
+    </div>
+                
+    <!--Cierre ventana modal-->  
+
 	<table>
 	<thead><h3>Tabla de horarios y disponibilidad</h3>
 		<h4>Viajes matutinos</h4>
@@ -15,7 +32,7 @@
 			<tr>
 				<td>{{this.dia}}</td>
 				{{#each this.disponibilidad}}
-					<td>{{this}}<button class="boton-cons" onclick="reservarLugar('{{../dia}}', {{@index}})">Reservar</button></td>
+					<td>{{this}}<button class="boton-cons" onclick="reservarLugar('{{../dia}}', {{this}} {{[@index]}})">Reservar</button></td>
 				{{/each}}
 			</tr>
 		{{/each}}
@@ -35,7 +52,7 @@
 			<tr>
 				<td>{{this.dia}}</td>
 				{{#each this.disponibilidad}}
-					<td>{{this}}<button class="boton-cons" onclick="reservarLugar('{{../dia}}', {{@index}})">Reservar</button></td>
+					<td>{{this}}<button class="boton-cons" onclick="reservarLugar('{{../dia}}', {{this}} {{[@index]}})">Reservar</button></td>
 				{{/each}}
 			</tr>
 		{{/each}}
@@ -46,13 +63,22 @@
 
 <script>
 
+
 	function reservarLugar(dia, lugares) {
+
+		console.log("Para el dia:", dia);
+		console.log("Hay disponibles", lugares, "lugares");
+
+		if(lugares >= 1) {
 			
-	//console.log(dia, lugares)
+			console.log("Hago la reserva")
 
-	console.log("Para el dia:", dia)
-	console.log("Hay disponibles", lugares, "lugares")
+		}else{
+			if(lugares <= 0) {
+				console.log("No puedo hacer la reserva")
+			}
+		}
+	
 	}
-
 
 </script>
