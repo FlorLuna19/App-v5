@@ -15,6 +15,9 @@ Crear una aplicación que sirva para registrar los pasajeros que va a tener a di
 2- Tener secciones de: registro, puntos de embarque y horarios.
 
 3- Tener un horario de "cierre" de envío de solicitud para el día siguiente (tal vez pueda haber dos horarios de cierre, uno por la mañana y otro de noche) (--Falta implementar--)
+
 4- La aplicación debe tener la opción para acceder al servicio de entrada (inicio de jornada laboral) o salida (fin de la jornada)
+
 5- Una vez actualizada la cantidad diaria de pasajeros, el administrador podrá enviar un servicio de transporte acorde a la cantidad de pasajeros (combi o remis)
+
 6- Los empleados podrán acceder al servicio de transporte indistintamente si tomaron el servicio de entrada o de salida.
