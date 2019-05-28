@@ -21,3 +21,11 @@ Crear una aplicación que sirva para registrar los pasajeros que va a tener a di
 5- Una vez actualizada la cantidad diaria de pasajeros, el administrador podrá enviar un servicio de transporte acorde a la cantidad de pasajeros (combi o remis)
 
 6- Los empleados podrán acceder al servicio de transporte indistintamente si tomaron el servicio de entrada o de salida.
+
+Tecnologias usadas
+- Javascript
+- Handlebars
+- Node Js
+- Express
+- Express Session
+- MongoDB
