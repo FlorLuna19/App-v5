@@ -1,5 +1,5 @@
 # App-reserva
-- Idea general
+### Idea general
 
 Una empresa ofrece a sus empleados un servicio de transporte (combis o remises) desde un punto de encuentro hasta la ubicación del lugar de trabajo.
 
