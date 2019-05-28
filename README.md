@@ -1,18 +1,20 @@
-# App-reserva
+# Proyecto Final
+
+## App-reserva: "ExpressViajes"
 ### Idea general
 
 Una empresa ofrece a sus empleados un servicio de transporte (combis o remises) desde un punto de encuentro hasta la ubicación del lugar de trabajo.
 
-- Problema
+### Problema
 
 Los empleados que trabajan en la empresa, si bien son empleados con horarios de trabajo fijos, algunos dìas trabajan desde su casa.
 Por lo que tienen que avisar al administrador cada día si van a utilizar el servicio de transporte al día siguiente o no.
 
-- Objetivo
+### Objetivo
 
 Crear una aplicación que sirva para registrar los pasajeros que va a tener a diario un servicio de transporte de una empresa.
 
-- Funcionalidades
+### Funcionalidades
 
 1- Registrar a los usuarios del servicio de transporte, se deben loguear con nombre de USUARIO y LUGAR desde donde accederían al servicio.
 
