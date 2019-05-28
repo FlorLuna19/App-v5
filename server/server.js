@@ -315,7 +315,7 @@ app.post('/registro/form', (req, res) => {
     let coleccionUsuarioNuevo = db.collection("usuarios");
 
     coleccionUsuarioNuevo.insertOne(usuarioNuevo, (err, datoCreado) => {
-      res.redirect('/index.html')
+      res.redirect('/login')
     })
 
   })

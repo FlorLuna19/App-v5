@@ -35,25 +35,3 @@ function login() {
     req.send(JSON.stringify(dato));
 
 }
-
-/* No se implemento aun
-//Función que muestra el usuario registrado en el home
-function mostrarUsuarioLogueado(callback){
-    let request = new XMLHttpRequest();
-
-    request.onload = function() {
-    var datosDeUsuarios = request.responseText;
-
-    callback(datosDeUsuarios);
-       
-    }
-   
-    request.open('GET', '/usuarios/datosUsuarios');
-    request.send();
-}
-
-function muestraDatosUsuario(nombreUsuario) {
-    var nombre = document.getElementById("user-id");
-    console.log("Hola" + nombreUsuario)
-
-}*/

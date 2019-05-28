@@ -2,18 +2,37 @@
 <p>Seguí los pasos a continuación para reservar tu lugar para llegar a destino</p>
 
 <div class="contenedor-reserva">
-   <!-- <button class="boton-cons" id="boton-consulta">Consultar</button>
-   <div id="divContenedorLugares">-->
+   <!-- <button class="boton-cons" id="boton-consulta">Consultar</button>-->
 
 	<table>
 	<thead><h3>Tabla de horarios y disponibilidad</h3>
 		<h4>Viajes matutinos</h4>
 		<tr>
-			<td>Día</td><td>7:00</td><td>7:30</td><td>8:00</td><!--etc ...-->
+			<td>Día</td><td>7:00</td><td>7:30</td><td>8:00</td>
 		</tr>
 	</thead>
 	<tbody>
 		{{#each datosIda}}
+			<tr>
+				<td>{{this.dia}}</td>
+				{{#each this.disponibilidad}}
+					<td>{{this}}<button class="boton-cons" onclick="reservarLugar()">Reservar</button></td>
+				{{/each}}
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+<br><br>
+
+<table>
+	<thead><h3>Tabla de horarios y disponibilidad</h3>
+		<h4>Viajes tarde</h4>
+		<tr>
+			<td>Día</td><td>16:30</td><td>17:00</td><td>17:30</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each datosVuelta}}
 			<tr>
 				<td>{{this.dia}}</td>
 				{{#each this.disponibilidad}}
@@ -23,104 +42,18 @@
 		{{/each}}
 	</tbody>
 </table>
-<br>
-
-<table>
-	<thead><h3>Tabla de horarios y disponibilidad</h3>
-		<h4>Viajes tarde</h4>
-		<tr>
-			<td>Día</td><td>16:00</td><td>16:30</td><td>17:00</td><!--etc ...-->
-		</tr>
-	</thead>
-	<tbody>
-		{{#each datosVuelta}}
-			<tr>
-				<td>{{this.dia}}</td>
-				{{#each this.disponibilidad}}
-					<td>{{this}}</td>
-				{{/each}}
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-	<table>
-	<thead><h3>Tabla de horarios y disponibilidad</h3>
-		<h4>Viajes matutinos</h4>
-
-		<tr>
-			<td><strong>Horario</strong></td>
-			<td><strong>Lunes</strong></td>
-			<td><strong>Martes</strong></td>
-			<td><strong>Miércoles</strong></td>
-			<td><strong>Jueves</strong></td>
-			<td><strong>Viernes</strong></td>
-		</tr>
-	</thead>
-	<tbody>
-		{{#each data}}
-			<tr> 
-				{{#each this.disponibilidad}}		<!--Array de disponibilidad ("acá this" es datos)-->
-					{{#if @first}}					<!--Entra a este if solo si es el primer elemento del array (pongo la hora solo una vez)-->
-						<td>{{this.hora}}</td>	<!--Array de lugares dentro de disponibilidad (acá "this" es datos.disponibilidad)-->
-					{{/if}}
-					<td>{{this.lugares}}</td>		<!--Array de lugares dentro de disponibilidad (acá "this" es datos.disponibilidad)-->
-					<td>{{this.lugares}}</td>
-				{{/each}}
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
-
-<!--
-
-    <table>
-	    <thead><h3>Tabla de horarios y disponibilidad</h3>
-		<h4>Viajes matutinos</h4>
-		<tr>
-		<td><strong>Horario</strong></td>
-		<td><strong>Lunes</strong></td>
-		<td><strong>Martes</strong></td>
-		<td><strong>Miércoles</strong></td>
-		<td><strong>Jueves</strong></td>
-		<td><strong>Viernes</strong></td>
-		</tr>
-	    </thead>
-
-		<tbody>{{#each data}}
-		<tr>
-			<td>06:30</td>
-			<td>{{this.hora}}</td>
-			<td>{{this.lugares}}</td>
-			<td>{{this.lugares}}</td>
-			<td>{{this.lugares}}</td>
-			<td>{{this.lugares}}</td>
-		</tr>
-
-		<tr>
-			<td>07:00</td>
-			<td>{{this.lugar}}</td>
-			<td>{{this.lugares}}</td>
-			<td>{{this.lugares}}</td>
-			<td>{{this.lugares}}</td>
-			<td>{{this.lugares}}</td>
-		</tr>
-
-		{{/each}}
-		</tbody>
-
-	</table>-->
 
 </div>
+
+<script>
+
+	
+
+	function reservarLugar(dia, horario) {
+	var dia = {{this.dia}}
+	var horario = {{this.disponibilidad}}
+		
+		console.log(dia, horario)
+	}
+
+</script>
