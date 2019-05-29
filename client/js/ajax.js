@@ -24,3 +24,23 @@ function pedirDatosReservaVuelta(callback){
     request.open('GET', 'datos/reservaVuelta');
     request.send()
 }
+
+
+//Funciones
+function reservarLugar(dia, lugares) {
+
+    console.log("Para el dia:", dia);
+    console.log("Hay disponibles", lugares, "lugares");
+
+    if(lugares >= 1) {
+        
+        console.log("Hago la reserva")
+
+    }else{
+        if(lugares <= 0) {
+            console.log("No puedo hacer la reserva")
+        }
+    }
+
+}
+

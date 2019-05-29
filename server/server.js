@@ -265,6 +265,12 @@ client.connect(function(error, client) {
 });
 ///********************************************************** */
 
+////
+function test() {
+  console.log("prueba")
+}
+
+
 
 //Ingreso a usuario con Mongodb
 app.get('/usuario', function(req, res) {
