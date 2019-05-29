@@ -93,7 +93,7 @@ function pedirDatosReserva(dia, lugares, callback){
         //console.log(datosLugares);
         callback(datosLugares);
     }
-    request.open('POST', 'http://localhost:4545/reserva');
+    request.open('POST', 'mongodb://localhost:27017');
     request.send()
 }
 

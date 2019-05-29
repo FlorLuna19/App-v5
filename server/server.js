@@ -224,7 +224,7 @@ app.get('/reserva', function(req, res) {
   });
 });
 
-///****************************************************** */
+///***************Falta implementar***************** */
 //POST, datos de reserva
 app.post('/reserva', (req, res) => {
 
@@ -264,12 +264,6 @@ client.connect(function(error, client) {
 
 });
 ///********************************************************** */
-
-////
-function test() {
-  console.log("prueba")
-}
-
 
 
 //Ingreso a usuario con Mongodb
